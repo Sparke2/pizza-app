@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  react-app:
+    build: ./pizzafront
+    # image: node
+    # working_dir: /app
+    # volumes:
+    #   - ./react-app:/app
+    ports:
+      - "3000:3000"
+  spring-app:
+    build: ./pizzaback
+    ports:
+      - "8090:8090"
+    depends_on:
+      - postgresqldb
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresqldb:5432/pizza
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=root
+  postgresqldb:
+    image: postgres:latest
+    build:
+      context: ./
+      dockerfile: Dockerfile.postgres
+    environment:
+      POSTGRES_DB: "pizza"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "root"
+    ports:
+      - "5432:5432"
+
+      
