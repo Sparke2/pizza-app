@@ -2,10 +2,6 @@ version: "3.8"
 services:
   react-app:
     build: ./pizzafront
-    # image: node
-    # working_dir: /app
-    # volumes:
-    #   - ./react-app:/app
     ports:
       - "3000:3000"
   spring-app:
