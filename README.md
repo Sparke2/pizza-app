@@ -11,9 +11,9 @@ cd pizza-app/
 ```
 
 ### Built With
-+React 
-+Spring 
-+Postgree
++ React 
++ Spring 
++ Postgree
 
 ### Setting up Dev
 
@@ -25,10 +25,19 @@ docker compose up
 
 ## Configuration
 
-Here you should write what are all of the configurations a user can enter when using the project.
-
-
+### Web
+```shell
+localhost:3000
+```
+### Backend
+```shell
+localhost:8090
+```
+### Databese
+```shell
+localhost:5432
+```
 ## Licensing
 
-Copyright © 2023 [Maria Rebrova](https://github.com/sparke2).
+Copyright © 2023 [Maria Rebrova](https://github.com/sparke2). :sparkles:
 This project is [MIT](https://github.com/Sparke2/pizza-app/blob/main/LICENSE) licensed.
